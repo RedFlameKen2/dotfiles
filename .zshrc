@@ -13,11 +13,16 @@ prompt pure
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+#bindkey -e
 bindkey '^[[3;5~' kill-word
 bindkey '^H' backward-kill-word
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+bindkey '^[[H' beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[3~' delete-char
+bindkey '^[[F' end-of-line
+bindkey '^[[4~' end-of-line
 EDITOR=vim
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -53,7 +58,7 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 

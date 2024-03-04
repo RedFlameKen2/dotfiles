@@ -6,18 +6,20 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 #My Custom Aliases
-alias ppssppwine="WINEARCH=win64 WINEPREFIX=~/wine/kennethWine wine /media/kenneth/TRANSCEND/newpsp/PPSSPP/PPSSPPWindows64.exe"
+alias ppssppwine="WINEARCH=win64 wine /run/media/kenneth/TRANSCEND/newpsp/PPSSPP/PPSSPPWindows64.exe"
 alias runwine="WINEARCH=win64 WINEPREFIX=~/wine/kennethWine wine"
 alias wineprefix="WINEARCH=win64 WINEPREFIX=~/wine/kennethWine"
 alias ovpncon="sudo openvpn --config ~/Documents/RedFlameKen2.ovpn"
 alias zerotierleave="sudo zerotier-one -q leave 1c33c1ced0e294b8"
 alias zerotierjoin="sudo zerotier-one -q join 1c33c1ced0e294b8"
 alias xfdisplay="xfce4-display-settings"
-alias vga-connect="xrandr --output VGA-1 --auto --above LVDS-1"
-alias vga-disconnect="xrandr --output VGA-1 --off"
+alias vga-connect="xrandr --output VGA1 --auto --above LVDS1"
+alias vga-disconnect="xrandr --output VGA1 --off"
+alias hdmi-connect="xrandr --output HDMI1 --auto --right-of LVDS1"
+alias hdmi-disconnect="xrandr --output HDMI1 --off"
 alias mousemap="systemctl start input-remapper && sudo input-remapper-control --command start --device \"USB OPTICAL MOUSE \" --preset "
 alias cmain="g++ main.cpp -o main && chmod +x main && ./main"
-alias checkpower="upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage:"
+alias checkpower="echo 'power: $(cat /sys/class/power_supply/BAT1/capacity)%\nstatus: $(cat /sys/class/power_supply/BAT1/status)'"
 alias resetconky="/home/kenneth/AppImages/.scripts/resetConky.sh"
 # some more ls aliases
 alias ll='ls -alF'
